@@ -2,26 +2,22 @@
 
 namespace App\Controller;
 
+use App\Model\Read;
 use PDO;
 
-class ListarProdutos
-{
+class ListarProdutos {
 
+    /**
+     * Requisita todos os dados da tabela de produtos,
+     * filtra o retorno em forma de array associativo e
+     * requisita a view onde os produtos são listados
+     *
+     * @return void
+     */
     public function processaRequisicao()
     {
-        $conexao = new PDO(
-            'mysql:dbname=crud;host=localhost;charset=utf8',
-            'root',
-            'root'
-        );
-        $stmt = $conexao->prepare(
-            'SELECT * FROM produtos'
-        );
-        $stmt->execute();
-
-        $produtos = $stmt->fetchAll(
-            PDO::FETCH_ASSOC
-        );
+        $stmt = new Read();
+        $produtos = $stmt->processaRequisicao();
 
         require __DIR__.'/../View/ListarProdutos.php';
     }

@@ -3,7 +3,7 @@
 <a id="listar-produtos" href="/produtos">Listar produtos</a>
 
 <!-- fomulário de inserção -->
-<form class="registrar" action="Create.php" method="POST">
+<form class="registrar" enctype="multipart/form-data" action="/salvar-produto" method="POST">
     <h2 class="sub">Formulário de registro</h2>
     <div class="inp">
         <label for="nome">Nome do produto</label>
@@ -15,7 +15,7 @@
     </div>
     <div class="inp">
         <label for="foto">Imagem do produto</label>
-        <input id="foto" name="foto" class="foto_adicionar" type="file" accept="image/*" />
+        <input id="foto" name="imagem" class="foto_adicionar" type="file" accept="image/*" />
     </div>
     <button id="registrar" type="submit">Registrar</button>
 </form>

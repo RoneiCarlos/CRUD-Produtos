@@ -1,6 +1,7 @@
 <?php require __DIR__.'/Template/Header.php' ?>
 
 <h2>Página não encontrada</h2>
-<img style="margin-top: -11rem; z-index:-1" src="https://freefrontend.com/assets/img/html-css-404-page-templates/HTML-404-Page-with-SVG.png" alt="">
+<br>
+<img src="https://media1.giphy.com/media/CS1EfWWymZPeo/giphy.gif?cid=ecf05e4774unzoa6kf15lvoscvf6myphlrih192zyo0ydqk1&rid=giphy.gif&ct=g" alt="">
 
 <?php require __DIR__.'/Template/Footer.php' ?>

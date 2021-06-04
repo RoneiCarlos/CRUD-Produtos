@@ -2,10 +2,14 @@
 
 namespace App\Controller;
 
-class Erro404
-{
+class Erro404 {
 
-    public function processaRequisicao()
+    /**
+     * Requisita a view de página não encontrada
+     *
+     * @return void
+     */
+    public function processaRequisicao() :void
     {
         require __DIR__.'/../View/Erro404.php';
     }

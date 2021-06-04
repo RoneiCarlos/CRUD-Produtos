@@ -1,6 +1,6 @@
 <?php require __DIR__.'/Template/Header.php' ?>
 
-<a id="cadastrar-produto" href="/novo-produto">Cadastrar produto</a>
+<a id="cadastrar-produto" href="/cadastro">Cadastrar produto</a>
 
 <!-- listagem de produtos -->
 <h2 class="sub">Lista de produtos</h2>
@@ -9,18 +9,24 @@
 </div>
 <ul class="produtos">
 
+    <?php if(!$produtos) { ?>
+        <div class="nome_produto">
+            <h3>Não há produtos registrados!</h3>
+        </div>
+    <?php exit(); } ?>
+
     <?php foreach ($produtos as $id => $produto) { ?>
         <li class="produto">
             <div class="imagem_nome_editar_deletar_produto">
                 <div class="imagem_produto">
-                    <img src="<?= 'data:image/jpeg;base64,' . base64_encode($produto['imagem']) ?>" alt="imagem do produto" />
+                    <img src="<?= 'data:image/png;base64,' . base64_encode($produto['imagem']) ?>" alt="imagem do produto" />
                 </div>
                 <div class="nome_produto">
                     <h3><?= $produto['nome']; ?></h3>
                 </div>
                 <div class="editar_deletar_produto">
-                    <button id="deletar_produto" value="<?= $produto['id']; ?>">Deletar</button>
-                    <button id="editar_produto" value="<?= $produto['id']; ?>">Editar</button>
+                    <a id="deletar_produto">Deletar</a>
+                    <a id="editar_produto">Editar</a>
                 </div>
             </div>
             <div class="descricao_produto">
