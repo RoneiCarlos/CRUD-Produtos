@@ -2,7 +2,6 @@
 
 namespace App\Model;
 use PDO;
-use PDOStatement;
 
 class Read {
 
@@ -23,6 +22,12 @@ class Read {
         );
     }
 
+    /**
+     * Prepara e executa a query para listar todos os produtos,
+     * retorna os dados dos produtos
+     *
+     * @return array
+     */
     public function processaRequisicao() :array
     {
         $stmt = $this->conexao->query(

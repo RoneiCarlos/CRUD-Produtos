@@ -201,6 +201,7 @@ input[type=file]::file-selector-button {
     font-weight: 600;
     padding: .2rem;
     text-align: center;
+    font-size: .8rem;
 }
 
 #deletar_produto {

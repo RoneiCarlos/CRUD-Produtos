@@ -2,8 +2,7 @@
 
 namespace App\Controller;
 
-class CadastrarProduto
-{
+class CadastrarProduto {
 
     /**
      * Requisita a view com o formulário de cadastro de produtos

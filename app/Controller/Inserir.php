@@ -2,36 +2,20 @@
 namespace App\Controller;
 
 use App\Model\Create;
-use PDO;
 
 class Inserir {
-
-    //Objeto de conexão PDO
-    private $conexao;
-
-    /**
-     * Cria o objeto PDO de conexão com o banco de dados
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->conexão = new PDO(
-            'mysql:dbname=crud;host=localhost;charset=utf8',
-            'root',
-            'root'
-        );
-    }
 
     /**
      * Atribui os valores da requisição POST que vem do formulário à variáveis,
      * confere se o arquivo inserido é uma imagem,
-     * passa elas para o método que faz a inserção dos dados do banco
+     * passa elas para o método que faz a inserção dos dados no banco
      *
      * @return void
      */
     public function processaRequisicao()
     {
+
+
         $nome = filter_input(
             INPUT_POST,
             'nome',
@@ -61,13 +45,18 @@ class Inserir {
         $insert = new Create();
         
         if (!$insert->setDados($nome, $descricao, $imagem)) {
-            echo "Erro de inserção de dados no banco!";
+            echo '
+            <script>
+                alert("Erro de inserção de dados!");
+                window.location.href = "/produtos";
+            </script>
+            ';
             exit();
         }
 
         echo '
             <script>
-                alert("Arquivo cadastrado com sucesso!");
+                alert("Porduto cadastrado com sucesso!");
                 window.location.href = "/produtos";
             </script>
         ';

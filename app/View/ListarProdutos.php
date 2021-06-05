@@ -3,18 +3,20 @@
 <a id="cadastrar-produto" href="/cadastro">Cadastrar produto</a>
 
 <!-- listagem de produtos -->
-<h2 class="sub">Lista de produtos</h2>
+<h2 class="sub">Lista de produtos<?= $produtos? ' ('.count($produtos).')' : '' ?></h2>
 <div class="divisor">
     <hr />
 </div>
 <ul class="produtos">
 
+    <!-- verificação de produtos retornados -->
     <?php if(!$produtos) { ?>
         <div class="nome_produto">
             <h3>Não há produtos registrados!</h3>
         </div>
     <?php exit(); } ?>
 
+    <!-- loop dos produtos -->
     <?php foreach ($produtos as $id => $produto) { ?>
         <li class="produto">
             <div class="imagem_nome_editar_deletar_produto">
@@ -25,8 +27,8 @@
                     <h3><?= $produto['nome']; ?></h3>
                 </div>
                 <div class="editar_deletar_produto">
-                    <a id="deletar_produto">Deletar</a>
-                    <a id="editar_produto">Editar</a>
+                    <a href="/excluir-produto<?= '?id='.$produto['id']; ?>" id="deletar_produto">Deletar</a>
+                    <a href="/editar-produto" id="editar_produto">Editar</a>
                 </div>
             </div>
             <div class="descricao_produto">
