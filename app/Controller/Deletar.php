@@ -36,7 +36,7 @@ class Deletar {
         if (!$delete->removeDados($id)) {
             echo '
             <script>
-                alert("Erro de remoção do produto!");
+                alert("Erro de remoção! Provavelmente o produto já tenha sido removido.");
                 window.location.href = "/produtos";
             </script>
             ';
