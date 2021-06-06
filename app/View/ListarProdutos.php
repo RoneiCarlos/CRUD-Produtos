@@ -28,7 +28,7 @@
                 </div>
                 <div class="editar_deletar_produto">
                     <a href="/excluir-produto<?= '?id='.$produto['id']; ?>" id="deletar_produto">Deletar</a>
-                    <a href="/editar-produto" id="editar_produto">Editar</a>
+                    <a href="/editar-produto<?= '?id='.$produto['id']; ?>" id="editar_produto">Editar</a>
                 </div>
             </div>
             <div class="descricao_produto">

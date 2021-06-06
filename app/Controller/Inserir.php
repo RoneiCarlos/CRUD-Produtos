@@ -15,7 +15,6 @@ class Inserir {
     public function processaRequisicao()
     {
 
-
         $nome = filter_input(
             INPUT_POST,
             'nome',
@@ -56,7 +55,7 @@ class Inserir {
 
         echo '
             <script>
-                alert("Porduto cadastrado com sucesso!");
+                alert("Produto cadastrado com sucesso!");
                 window.location.href = "/produtos";
             </script>
         ';
