@@ -1,25 +1,23 @@
 <?php
 
 namespace App\Model;
-use PDO;
+
+use App\Model\Connection;
 
 class Delete {
     
     //Objeto de conexão PDO
     private $conexao;
-    
+
     /**
-     * Cria o objeto PDO de conexão com o banco de dados
+     * Instancia o objeto PDO de conexão com o banco de dados
      *
      * @return void
      */
-    public function __construct() 
+    public function __construct()
     {
-        $this->conexao = new PDO(
-            'mysql:dbname=crud;host=localhost;charset=utf8',
-            'root',
-            'root'
-        );
+        $this->conexao = new Connection();
+        $this->conexao = $this->conexao->getConnection();
     }
 
     /**
